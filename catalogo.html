@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Papelería</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .enlace-header {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .enlace-header:hover {
+            color: #FFD700;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .producto {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 150px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        .producto img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        button.agregar {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        button.agregar:hover {
+            background-color: #45a049;
+        }
+
+        #carrito {
+            margin: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        #finalizar-compra {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #finalizar-compra:hover {
+            background-color: #45a049;
+        }
+
+        #pago {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        #mensaje {
+            color: green;
+            font-size: 1.2rem;
+        }
+
+        .eliminar {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .eliminar:hover {
+            background-color: #cc0000;
+        }
+
+        /* Estilos para pantallas pequeñas (por ejemplo, celulares) */
+        @media screen and (max-width: 768px) {
+            #catalogo {
+                justify-content: center;
+            }
+
+            .producto {
+                width: 100%;
+                max-width: 150px;
+                margin: 10px;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="enlace-header"><h1>Catálogo</h1></a>
+    </header>
+
+    <section id="catalogo">
+        <div class="producto" data-id="1">
+            <img src="https://walmartni.vtexassets.com/arquivos/ids/197039/Cuaderno-Nottas-De-Resortes-Dibujo-Surtido-De-Color-100-Hojas-2-14627.jpg?v=637795860095000000" alt="Producto 1">
+            <h3>Cuaderno</h3>
+            <p>$5.00</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="2">
+            <img src="https://juanmarcet.com/wp-content/uploads/2022/07/0507140735-600x600.jpg" alt="Producto 2">
+            <h3>Lápices</h3>
+            <p>$2.00</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="3">
+            <img src="https://xaisfe.com/wp-content/uploads/2015/12/resaltadores-pelikan-xaisfe.jpg" alt="Producto 3">
+            <h3>Resaltadores</h3>
+            <p>$3.50</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="4">
+            <img src="https://vernazagrafic.com/wp-content/uploads/2022/05/27LG0030.jpg" alt="Producto 4">
+            <h3>Archivadores</h3>
+            <p>$4.00</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="5">
+            <img src="https://dilipa.com.ec/1648-large_default/borrador-std-rapidografo-508.jpg" alt="Producto 5">
+            <h3>Borradores</h3>
+            <p>$1.50</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="6">
+            <img src="https://www.comercialmilcosas.com/wp-content/uploads/ced-1.jpeg" alt="Producto 6">
+            <h3>Goma en Barra</h3>
+            <p>$0.80</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="7">
+            <img src="https://img.freepik.com/vector-premium/ilustracion-vector-reglas-estudiantes-ninos_28461-23.jpg" alt="Producto 7">
+            <h3>Reglas</h3>
+            <p>$1.20</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="8">
+            <img src="https://comsucre.com.ec/wp-content/uploads/2022/11/MA-F-1845-1.png" alt="Producto 8">
+            <h3>Marcadores</h3>
+            <p>$2.50</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+
+        <div class="producto" data-id="9">
+            <img src="https://xaisfe.com/wp-content/uploads/2016/01/tempera-pelikan-6-colores-xaisfe.jpg" alt="Producto 9">
+            <h3>Temperas</h3>
+            <p>$1.00</p>
+            <button class="agregar">Agregar al carrito</button>
+        </div>
+    </section>
+
+    <section id="carrito">
+        <h2>Tu Carrito</h2>
+        <ul id="lista-carrito"></ul>
+        <p id="total">Total: $0.00</p>
+        <button id="finalizar-compra">Finalizar Compra</button>
+    </section>
+
+    <section id="pago" style="display:none;">
+        <h2>Formulario de Pago</h2>
+        <form id="form-pago">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="tarjeta">Número de tarjeta:</label>
+            <input type="text" id="tarjeta" required>
+
+            <button type="submit">Pagar</button>
+        </form>
+        <p id="mensaje"></p>
+    </section>
+
+    <script>
+        let carrito = [];
+        const productos = document.querySelectorAll('.producto');
+        const listaCarrito = document.getElementById('lista-carrito');
+        const totalCarrito = document.getElementById('total');
+        const finalizarCompra = document.getElementById('finalizar-compra');
+        const pagoSection = document.getElementById('pago');
+        const formPago = document.getElementById('form-pago');
+        const mensajePago = document.getElementById('mensaje');
+
+        // Función para actualizar el carrito
+        function actualizarCarrito() {
+            listaCarrito.innerHTML = '';
+            let total = 0;
+            carrito.forEach((producto, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${producto.nombre} - $${producto.precio}`;
+
+                // Crear el botón de eliminar
+                const eliminarBtn = document.createElement('button');
+                eliminarBtn.textContent = 'Eliminar';
+                eliminarBtn.classList.add('eliminar');
+
+                // Función que elimina el producto
+                eliminarBtn.addEventListener('click', () => eliminarProducto(index));
+
+                li.appendChild(eliminarBtn);
+                listaCarrito.appendChild(li);
+                total += producto.precio;
+            });
+            totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        // Función para eliminar productos del carrito
+        function eliminarProducto(index) {
+            carrito.splice(index, 1);  // Eliminar producto por índice
+            actualizarCarrito();  // Actualizar el carrito después de eliminar
+        }
+
+        // Función para agregar productos al carrito
+        productos.forEach(producto => {
+            producto.querySelector('.agregar').addEventListener('click', () => {
+                const nombre = producto.querySelector('h3').textContent;
+                const precio = parseFloat(producto.querySelector('p').textContent.slice(1));
+                carrito.push({ nombre, precio });
+                actualizarCarrito();  // Actualizar el carrito cuando se agrega un producto
+            });
+        });
+
+        // Función para mostrar la sección de pago
+        finalizarCompra.addEventListener('click', () => {
+            if (carrito.length > 0) {
+                document.getElementById('carrito').style.display = 'none';
+                pagoSection.style.display = 'block';
+            } else {
+                alert('Tu carrito está vacío.');
+            }
+        });
+
+        // Función para procesar el pago (simulado)
+        formPago.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const tarjeta = document.getElementById('tarjeta').value;
+
+            if (nombre && tarjeta) {
+                mensajePago.textContent = `Gracias, ${nombre}. ¡Pago realizado con éxito!`;
+                mensajePago.style.color = 'green';
+                carrito = [];  // Limpiar el carrito después del pago
+                actualizarCarrito();  // Actualizar el carrito después de la compra
+                document.getElementById('carrito').style.display = 'block';
+                pagoSection.style.display = 'none';
+            } else {
+                mensajePago.textContent = 'Por favor, complete todos los campos.';
+                mensajePago.style.color = 'red';
+            }
+        });
+    </script>
+
+</body>
+</html>

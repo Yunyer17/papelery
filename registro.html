@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo Papelería HOW</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+      padding-bottom: 60px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0077b6;
+    }
+
+    .catalogo-form, .catalogo-tabla {
+      background-color: #ffffff;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0077b6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #00b4d8;
+      color: white;
+    }
+
+    .btn-volver {
+      display: inline-block;
+      background-color: #0077b6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+      margin-top: 30px;
+    }
+
+    .btn-volver:hover {
+      background-color: #023e8a;
+    }
+
+    .volver-container {
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .catalogo-form, .catalogo-tabla {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="catalogo-form">
+    <h2>Agregar Producto al Catálogo</h2>
+    <form id="productoForm">
+      <label for="nombre">Nombre del Producto:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="categoria">Categoría:</label>
+      <select id="categoria" required>
+        <option value="">-- Selecciona una categoría --</option>
+        <option value="Útiles Escolares">Útiles Escolares</option>
+        <option value="Oficina">Material de Oficina</option>
+        <option value="Arte">Material de Arte</option>
+        <option value="Otros">Otros</option>
+      </select>
+
+      <label for="precio">Precio ($):</label>
+      <input type="number" id="precio" step="0.01" required>
+
+      <label for="stock">Cantidad en Stock:</label>
+      <input type="number" id="stock" required>
+
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" rows="3"></textarea>
+
+      <button type="submit">Agregar al Catálogo</button>
+    </form>
+  </section>
+
+  <section class="catalogo-tabla">
+    <h2>Catálogo de Productos</h2>
+    <table id="tablaProductos">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Categoría</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Productos se agregan aquí -->
+      </tbody>
+    </table>
+
+    <div class="volver-container">
+      <a href="index.html" class="btn-volver">Volver a la Página Principal</a>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('productoForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const categoria = document.getElementById('categoria').value;
+      const precio = document.getElementById('precio').value;
+      const stock = document.getElementById('stock').value;
+      const descripcion = document.getElementById('descripcion').value;
+
+      const tabla = document.getElementById('tablaProductos').getElementsByTagName('tbody')[0];
+      const nuevaFila = tabla.insertRow();
+
+      nuevaFila.innerHTML = `
+        <td>${nombre}</td>
+        <td>${categoria}</td>
+        <td>$${parseFloat(precio).toFixed(2)}</td>
+        <td>${stock}</td>
+        <td>${descripcion}</td>
+      `;
+
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

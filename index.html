@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Papelería HOW</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #00b4d8, #0077b6);
+      color: white;
+      text-align: center;
+      font-size: 25px;
+      padding: 40px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      background: #0096c7;
+      padding: 15px 10px;
+      flex-wrap: wrap; /* por si la pantalla es muy pequeña */
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffe066;
+    }
+
+    .now {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: white;
+      color: #222;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: url('https://static.vecteezy.com/system/resources/previews/003/357/015/non_2x/frame-of-different-stationery-on-blue-background-photo.jpg') no-repeat center center/cover;
+      color: white;
+      background-blend-mode: multiply;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero h3 {
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #00b4d8;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0077b6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px 20px;
+      background: #f1f1f1;
+    }
+
+    .service {
+      background: #ffccd5;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PAPELERÍA HOW</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="registro.html">Registro</a></li>
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="now">
+    <h2>ÚTILES ESCOLARES</h2>
+    <p>TODOS LOS PRODUCTOS CON EL 25% DE DESCUENTO PARA TUS HIJOS.</p>
+  </div>
+
+  <div class="hero">
+    <h2>% OFERTA %</h2>
+    <h3>TODO A TAN SOLO $1.00 DÓLAR</h3>
+    <a href="catalogo.html" class="btn">Descubrir más</a>
+  </div>
+
+  <section class="container">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos una empresa dedicada a brindar soluciones innovadoras y de calidad a nuestros clientes.</p>
+  </section>
+
+  <section class="services">
+    <div class="service">
+      <h3>Diseño Web</h3>
+      <p>Creación de sitios web atractivos y funcionales.</p>
+    </div>
+    <div class="service">
+      <h3>Desarrollo</h3>
+      <p>Programación de aplicaciones y plataformas digitales.</p>
+    </div>
+    <div class="service">
+      <h3>Marketing Digital</h3>
+      <p>Estrategias para potenciar tu presencia en línea.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Papeleria how - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
